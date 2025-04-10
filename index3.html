@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vivid Arch Corporativo</title>
+<link href="favicon.png" rel="icon" type="image/png"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<style>
+nav {
+  background: var(--main);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 15px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+body {
+  padding-top: 70px; /* Ajusta según la altura del nav */
+}
+
+    :root {
+      --main: #1a1a2e;
+      --accent: #0f3460;
+      --light: #eaeaea;
+      --white: #fff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Roboto", sans-serif;
+      background: var(--light);
+      color: #333;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url("img/header.jpg") no-repeat center center/cover;
+      color: white;
+      text-align: center;
+      padding: 200px 20px;
+      position: relative;
+    }
+
+    header h1 {
+      font-size: 3rem;
+    }
+
+    nav {
+      background: var(--main);
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 15px;
+    }
+
+    nav a {
+      color: white;
+      margin: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    section:nth-of-type(even) {
+      flex-direction: row-reverse;
+      background: #f9f9f9;
+    }
+
+    section:nth-of-type(odd) {
+      flex-direction: row;
+    }
+
+    .text,
+    .media {
+      flex: 1 1 400px;
+      max-width: 600px;
+    }
+
+    .media img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    h2 {
+      color: var(--accent);
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
+
+    .clientes,
+    .contenedor-img {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 20px;
+      justify-items: center;
+      align-items: center;
+    }
+
+    .clientes img,
+    .contenedor-img img {
+      max-width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .carousel {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      max-width: 100%;
+      border-radius: 12px;
+    }
+
+    .carousel-track {
+      display: flex;
+      width: 100%;
+      transition: transform 0.5s ease;
+    }
+
+    .carousel-track img {
+      flex: 0 0 100%;
+      width: 100%;
+      height: 400px;
+      object-fit: contain;
+      background-color: #fff;
+      border-radius: 12px;
+    }
+
+    .carousel-dots {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .carousel-dots button {
+      border: none;
+      background: #ccc;
+      border-radius: 50%;
+      width: 10px;
+      height: 10px;
+      margin: 0 5px;
+      cursor: pointer;
+    }
+
+    .carousel-dots button.active {
+      background: var(--accent);
+    }
+
+    footer {
+      background: var(--main);
+      color: var(--white);
+      text-align: center;
+      padding: 5px 20px;
+    }
+
+    footer a {
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .footer-content {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .footer-content img {
+      width: 100px;
+      margin-top: 20px;
+    }
+
+    @media screen and (max-width: 768px) {
+      section {
+        flex-direction: column !important;
+        text-align: center;
+      }
+
+      .carousel-track img {
+        flex: 0 0 100%;
+        width: 100%;
+        height: 320px;
+        object-fit: contain;
+        background-color: #fff;
+        border-radius: 12px;
+      }
+
+      .clientes-grid img {
+        max-height: 50px;
+        padding: 8px;
+      }
+    }
+
+    #quienessssssssss .clientes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+      justify-items: center;
+      align-items: center;
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    #quienessssssssss .clientes img {
+      max-width: 100%;
+      max-height: 100px;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    #quienessssssssss h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: var(--accent);
+      font-size: 2rem;
+    }
+
+    #quienessssssssss .clientes h2 {
+      grid-column: 1 / -1;
+      text-align: center;
+      margin-bottom: 20px;
+      color: var(--accent);
+      font-size: 2rem;
+    }
+
+    .clientes-section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .footer-content-grid {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: center;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .footer-contacto {
+      flex: 1 1 300px;
+    }
+
+    .footer-logos {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 20px;
+    }
+
+    .footer-logos img {
+      width: 100px;
+    }
+
+    .footer-content-grid {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px;
+      max-width: 1200px;
+      margin: auto;
+      padding: 40px 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-contacto {
+      flex: 1 1 300px;
+      text-align: left;
+    }
+
+    .footer-logos {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 10px;
+    }
+
+    .footer-logos img:first-child {
+      width: 140px;
+    }
+
+    .footer-logos img:last-child {
+      width: 120px;
+    }
+
+    .footer-content-grid {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 40px;
+      max-width: 1000px;
+      margin: auto;
+      padding: 30px 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-contacto {
+      flex: 1 1 300px;
+      text-align: left;
+    }
+
+    .footer-contacto p {
+      margin-bottom: 10px;
+    }
+
+    .footer-logos {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 12px;
+    }
+
+    .footer-logos img:first-child {
+      width: 100px;
+    }
+
+    .footer-logos img:last-child {
+      width: 100px;
+    }
+
+    < !--
+
+    /* Reducir padding general de secciones */
+    -->section {
+      padding: 40px 20px;
+    }
+
+    /* Footer más pequeño y con menos espacio entre contactos */
+    .footer-content-grid {
+      padding: 20px 20px;
+    }
+
+    .footer-contacto p {
+      margin-bottom: 6px;
+    }
+
+    .footer-logos img:first-child,
+    .footer-logos img:last-child {
+      width: 90px;
+    }
+
+    /* Responsive menu styles */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      margin-left: auto;
+    }
+
+    .menu-toggle span {
+      height: 3px;
+      width: 25px;
+      background: white;
+      margin: 4px 0;
+      border-radius: 2px;
+    }
+
+    @media screen and (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 999;
+      }
+
+      .menu-toggle {
+        display: flex;
+        padding: 10px 20px;
+      }
+
+      nav a {
+        display: none;
+        padding: 10px 20px;
+        width: 100%;
+      }
+
+      nav.open a {
+        display: block;
+      }
+
+      body {
+        margin-top: 100px;
+      }
+    }
+
+    .clientes img {
+      width: 100%;
+      max-width: 180px;
+      height: auto;
+      object-fit: contain;
+    }
+  
+header.sticky-scroll {
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  background-color: rgba(26, 26, 46, 0.95) !important;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+</style>
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet"/></head>
+<body>
+<header>
+<img alt="Logo Vivid Arch" src="img/logoheader.png" style="
+          position: absolute;
+          top: 20px;
+          left: 20px;
+          width: 100px;
+          height: auto;
+          filter: brightness(5.0);
+        "/>
+<h1>Vivid Arch Corporativo</h1>
+</header>
+<nav>
+<div class="menu-toggle" onclick="toggleMenu()">
+<span></span>
+<span></span>
+<span></span>
+</div>
+<a href="#quienes">Quiénes Somos</a>
+<a href="#servicios">Servicios</a>
+<a href="#construccion">Construcción</a>
+<a href="#beneficios">Beneficios</a>
+<a href="#contacto">Contacto</a>
+</nav>
+<section class="container-fluid py-5" data-aos="fade-up" id="quienes">
+<div class="row justify-content-center">
+<div class="col-12 px-4 px-md-5 text-center">
+<h2 class="pt-4 fw-bold">Quiénes Somos</h2>
+<p class="text-justify">
+          Vivid Arch Corporativo S.A. de C.V. cuenta con 7 años de experiencia
+          en la industria de la construcción y de la comercialización de
+          productos nacionales e importados, la cual ha demostrado capacidad,
+          compromiso y calidad, que le ha permitido posicionarse y captar la
+          confianza de clientes en toda la República Mexicana. Así como la
+          participación en licitaciones a nivel federal y estatal, ofreciendo
+          calidad, precio y puntualidad en sus servicios, comprometidos
+          siempre con el último filtro el consumidor.
+        </p>
+<img alt="Logo" class="img-fluid mt-4" src="img/logoheader.png" style="max-width: 180px"/>
+</div>
+</div>
+</section>
+<section class="container py-5 py-5" data-aos="fade-left" id="servicios">
+<div class="row align-items-center">
+<div class="col-md-6">
+<div class="media">
+<div class="carousel" id="carouselServicios">
+<div class="carousel-track">
+<img alt="Servicio 1" src="img/servicios/1.jpg"/>
+<img alt="Servicio 2" src="img/servicios/2.jpg"/>
+<img alt="Servicio 3" src="img/servicios/3.png"/>
+</div>
+<div class="carousel-dots"></div>
+</div>
+</div>
+</div>
+<div class="col-md-6 mb-4 mb-md-0">
+<div class="text">
+<h2 class="pt-4 text-center fw-bold">Servicios que Ofrecemos a Nivel Nacional</h2>
+<ul>
+<li><strong>Comercialización:</strong> Nos encargamos de la venta de productos nacionales e importados. Esto
+              incluye desde material de construcción hasta electrodomésticos, mobiliario de oficina, productos de
+              limpieza y herramientas. También comercializamos partes mecánicas y eléctricas, medicamentos y otros
+              productos esenciales.</li>
+<li><strong>Desinfección:</strong>Servicios de sanitización y fumigación en casas, locales, jardines,
+              vehículos, escuelas, bodegas, restaurantes, plazas, oficinas y hoteles es todo el país.</li>
+<li><strong>Limpieza:</strong> Somos punteros a nivel nacional por el servicio en toda la Republica, dando
+              servicios profesionales a corporativos, dependencias gubernamentales, institutos, etc.</li>
+<li><strong>Jardinería:</strong> Jardinería y poda de árboles en parques, jardines, escuelas, empresas y
+              dependencias gubernamentales.</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section class="container py-5 py-5" data-aos="fade-right" id="construccion">
+<div class="row align-items-center">
+<div class="col-md-6">
+<h2 class="pt-4 text-center fw-bold">Construcción Bajío</h2>
+<ul>
+<li>
+<strong>Residencias y Fraccionamientos:</strong>
+<ul>
+<li>Diseño.</li>
+<li>Servicios eléctricos, fontanería, pintura y canteras.</li>
+</ul>
+</li>
+<br/>
+<li>
+<strong>Infraestructura:</strong>
+<ul>
+<li>Obras de infraestructura de alumbrado público.</li>
+<li>Diseño y construcción de pozos profundos.</li>
+<li>Mantenimiento de plantas de tratamiento.</li>
+</ul>
+</li>
+<br/>
+<li>
+<strong>Gestión de Proyectos:</strong>
+<ul>
+<li>
+                Asesoría y gestión integral del proyecto desde la
+                planificación hasta la entrega.
+              </li>
+<li>Supervisión de obra y control de calidad.</li>
+</ul>
+</li>
+<br/>
+<li>
+<strong>Naves industriales:</strong>
+<ul>
+<li>Construcción de Obra civil.</li>
+<li>Servicios eléctricos de mantenimiento y construcción.</li>
+<li>Pintura.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="col-md-6">
+<div class="media">
+<div class="carousel" id="carouselConstruccion">
+<div class="carousel-track">
+<img alt="Construcción 1" src="img/construccionbajio/1.jpg"/>
+<img alt="Construcción 2" src="img/construccionbajio/2.png"/>
+<img alt="Construcción 3" src="img/construccionbajio/3.png"/>
+<img alt="Construcción 4" src="img/construccionbajio/4.png"/>
+<img alt="Construcción 5" src="img/construccionbajio/5.png"/>
+<img alt="Construcción 6" src="img/construccionbajio/6.png"/>
+</div>
+<div class="carousel-dots"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="container-fluid py-5 d-flex justify-content-center flex-column align-items-center text-center" data-aos="zoom-in" id="beneficios">
+<h2 class="fw-bold text-center">Beneficios de Elegir Nuestros Servicios</h2>
+<!-- <h2 class="fw-bold text-center">¿Por qué elegirnos?</h2> -->
+<p class="text-center">
+      En Vivid Arch te ofrecemos más que servicios de construcción: te damos
+      una experiencia de colaboración cercana, transparente y profesional.
+      Estos son algunos beneficios de trabajar con nosotros:
+    </p>
+<div class="row justify-content-center text-start px-5">
+<div class="col-md-6">
+<ul>
+<li>
+<strong>Presencia Local y Nacional.</strong><br/>
+            Contamos con personal capacitado y profesional en puntos
+            estratégicos de la República.
+          </li>
+<br/>
+<li>
+<strong>Compromiso Personalizado.</strong><br/>
+            Nos involucramos contigo en cada etapa, entendiendo tus metas y
+            asegurando que el resultado final supere tus expectativas.
+          </li>
+<br/>
+<li>
+<strong>Transparencia Total.</strong><br/>
+            Recibirás reportes semanales claros sobre avances, costos y
+            decisiones importantes, dándote control total sobre tu inversión.
+          </li>
+</ul>
+</div>
+<div class="col-md-6">
+<ul>
+<li>
+<strong>Cercanía y Seguridad.</strong><br/>
+            Estamos siempre disponibles para resolver tus dudas y asesorarte.
+          </li>
+<br/>
+<li>
+<strong>Flexibilidad y Adaptabilidad.</strong><br/>
+            Nos ajustamos a los desafíos de cada proyecto, manteniendo la
+            calidad sin comprometer plazos ni objetivos.
+          </li>
+<br/>
+<li>
+<strong>Calidad y Entregas Puntuales.</strong><br/>
+            Cuidamos cada detalle, desde los materiales hasta la ejecución,
+            asegurando acabados de alto nivel y cumplimiento estricto de los
+            tiempos acordados.
+          </li>
+</ul>
+</div>
+</div>
+</section>
+<section class="container-fluid py-5 text-center" data-aos="fade-up" id="clientes">
+<div class="container">
+<h2 class="pt-4 fw-bold">Clientes</h2>
+<div class="row justify-content-center align-items-center g-4">
+<div class="col-6 col-sm-4 col-md-3 col-lg-2 d-flex justify-content-center">
+<img alt="Cliente 1" class="img-fluid" src="img/clientes/1.png"/>
+</div>
+<div class="col-6 col-sm-4 col-md-3 col-lg-2 d-flex justify-content-center">
+<img alt="Cliente 2" class="img-fluid" src="img/clientes/2.png"/>
+</div>
+<div class="col-6 col-sm-4 col-md-3 col-lg-2 d-flex justify-content-center">
+<img alt="Cliente 3" class="img-fluid" src="img/clientes/3.png"/>
+</div>
+<div class="col-6 col-sm-4 col-md-3 col-lg-2 d-flex justify-content-center">
+<img alt="Cliente 4" class="img-fluid" src="img/clientes/4.png"/>
+</div>
+<div class="col-6 col-sm-4 col-md-3 col-lg-2 d-flex justify-content-center">
+<img alt="Cliente 5" class="img-fluid" src="img/clientes/5.png"/>
+</div>
+<div class="col-6 col-sm-4 col-md-3 col-lg-2 d-flex justify-content-center">
+<img alt="Cliente 6" class="img-fluid" src="img/clientes/6.png"/>
+</div>
+<div class="col-6 col-sm-4 col-md-3 col-lg-2 d-flex justify-content-center">
+<img alt="Cliente 7" class="img-fluid" src="img/clientes/7.png"/>
+</div>
+<div class="col-6 col-sm-4 col-md-3 col-lg-2 d-flex justify-content-center">
+<img alt="Cliente 8" class="img-fluid" src="img/clientes/8.png"/>
+</div>
+<div class="col-6 col-sm-4 col-md-3 col-lg-2 d-flex justify-content-center">
+<img alt="Cliente 9" class="img-fluid" src="img/clientes/9.png"/>
+</div>
+<div class="col-6 col-sm-4 col-md-3 col-lg-2 d-flex justify-content-center">
+<img alt="Cliente 10" class="img-fluid" src="img/clientes/10.png"/>
+</div>
+<div class="col-6 col-sm-4 col-md-3 col-lg-2 d-flex justify-content-center">
+<img alt="Cliente 11" class="img-fluid" src="img/clientes/11.png"/>
+</div>
+<div class="col-6 col-sm-4 col-md-3 col-lg-2 d-flex justify-content-center">
+<img alt="Cliente 12" class="img-fluid" src="img/clientes/12.png"/>
+</div>
+</div>
+</div>
+</section>
+<footer id="contacto">
+<div class="footer-content-grid">
+<div class="footer-contacto">
+<p>
+<strong style="font-size: 20px">Contacto</strong><br/>
+<br/>
+<br/>
+<strong>CEO Héctor Hernández Acosta</strong><br/>
+<a class="text-white text-decoration-none me-3" href="mailto:ceo@vividarch.mx">
+<i class="fa fa-envelope"></i> ceo@vividarch.mx
+          </a>
+<br/>
+<a class="text-white text-decoration-none" href="tel:+522281084174">
+<i class="fa fa-phone"></i> +52 228 108 41 74
+          </a>
+</p>
+<br/>
+<p>
+<strong>P.M. Ana Cristina Sánchez</strong><br/>
+<a class="text-white text-decoration-none me-3" href="mailto:proyectos@vividarch.mx">
+<i class="fa fa-envelope"></i>
+            proyectos@vividarch.mx </a><br/><a class="text-white text-decoration-none" href="tel:+522282762817">
+<i class="fa fa-phone"></i> +52 228 276 28 17
+          </a>
+</p>
+</div>
+<div class="footer-logos">
+<img alt="Logo" src="img/logoheader.png" style="filter: brightness(5.0);"/>
+<br/>
+<img alt="QR Contacto" src="img/footer/qr.png"/>
+</div>
+</div>
+</footer>
+<script>
+    function setupCarousel(carouselId) {
+      const carousel = document.getElementById(carouselId);
+      const track = carousel.querySelector(".carousel-track");
+      const dotsContainer = carousel.querySelector(".carousel-dots");
+      const images = track.children;
+      let currentIndex = 0;
+
+      // Crear dots
+      for (let i = 0; i < images.length; i++) {
+        const dot = document.createElement("button");
+        if (i === 0) dot.classList.add("active");
+        dot.addEventListener("click", () => {
+          track.style.transform = `translateX(-${i * 100}%)`;
+          currentIndex = i;
+          updateDots();
+        });
+        dotsContainer.appendChild(dot);
+      }
+
+      function updateDots() {
+        const dots = dotsContainer.querySelectorAll("button");
+        dots.forEach((d, i) =>
+          d.classList.toggle("active", i === currentIndex)
+        );
+      }
+
+      function autoSlide() {
+        currentIndex = (currentIndex + 1) % images.length;
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        updateDots();
+      }
+
+      setInterval(autoSlide, 9000);
+    }
+
+    setupCarousel("carouselServicios");
+    setupCarousel("carouselConstruccion");
+  </script>
+<script>
+    function toggleMenu() {
+      document.querySelector("nav").classList.toggle("open");
+    }
+  </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true
+  });
+</script>
+
+<script>
+  window.addEventListener("scroll", function() {
+    const nav = document.querySelector("nav");
+    if (window.scrollY > 30) {
+      nav.classList.add("sticky-scroll");
+    } else {
+      nav.classList.remove("sticky-scroll");
+    }
+  });
+</script>
+</body>
+</html>
