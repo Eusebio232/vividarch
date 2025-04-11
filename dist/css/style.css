@@ -18,10 +18,6 @@ header {
   justify-content: space-between;
 }
 
-section {
-  padding: 35px 40px;
-  scroll-margin-top: 100px;
-}
 
 h2 {
   color: #004080;
@@ -216,9 +212,13 @@ img {
     justify-content: center;
   }
 }
+section {
+  padding: 35px 40px;
+  scroll-margin-top: 250px !important;
+}
 
 [id] {
-  scroll-margin-top: 100px;
+  scroll-margin-top: 250px !important;
 }
 
 .corporativo
