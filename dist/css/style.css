@@ -212,13 +212,26 @@ img {
     justify-content: center;
   }
 }
+
 section {
   padding: 35px 40px;
-  scroll-margin-top: 250px !important;
+  scroll-margin-top: 180px !important;
 }
 
 [id] {
-  scroll-margin-top: 250px !important;
+  scroll-margin-top: 180px !important;
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 35px 40px;
+    scroll-margin-top: 350px !important;
+  }
+  
+  [id] {
+    scroll-margin-top: 350px !important;
+  }
+  
 }
 
 .corporativo
