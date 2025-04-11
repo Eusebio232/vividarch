@@ -56,7 +56,7 @@ body {
   }
 
   .presentacion .izquierda img {
-    width: 20%;
+    width: 24%;
     height: auto;
     object-fit: contain;
     filter: brightness(1);
@@ -114,7 +114,7 @@ body {
     }
 
     .presentacion .izquierda img {
-      width: 20%;
+      width: 28%;
       margin: 20px auto;
       filter: brightness(1);
     }
