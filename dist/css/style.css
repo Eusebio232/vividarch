@@ -56,10 +56,12 @@ body {
   }
 
   .presentacion .izquierda img {
-    width: 24%;
+    width: 35%;
     height: auto;
     object-fit: contain;
     filter: brightness(1);
+    margin-right: -195px;
+    margin-top: -130px;
 
   }
 
@@ -114,9 +116,11 @@ body {
     }
 
     .presentacion .izquierda img {
-      width: 28%;
-      margin: 20px auto;
+      width: 50%;
+      /* margin: 20px auto; */
       filter: brightness(1);
+      margin-right: -90px;
+      margin-top: -80px;
     }
 
     .presentacion .derecha {
